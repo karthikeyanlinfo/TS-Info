@@ -1,0 +1,531 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Toxin Solutions — Enter what’s next.</title>
+  <meta name="description" content="Toxin Solutions — independent digital studio. Immersive websites, real-time 3D, creative development and digital solutions for people with a vision beyond ordinary.">
+  <meta name="theme-color" content="#050506">
+  <link rel="canonical" href="https://toxinsolutions.in/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Toxin Solutions">
+  <meta property="og:title" content="Toxin Solutions — Enter what’s next.">
+  <meta property="og:description" content="Immersive websites, real-time 3D and creative development.">
+  <meta property="og:url" content="https://toxinsolutions.in/">
+  <meta property="og:image" content="https://toxinsolutions.in/assets/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="assets/favicon-64.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/main.css">
+  <script>document.documentElement.classList.replace("no-js", "js");</script>
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"ProfessionalService","name":"Toxin Solutions","url":"https://toxinsolutions.in/","logo":"https://toxinsolutions.in/assets/icon-512.png","slogan":"Enter what’s next.","description":"Independent digital studio for immersive websites, creative development and digital solutions."}
+  </script>
+</head>
+<body class="is-loading">
+  <a class="skip" href="#main">Skip to content</a>
+
+  <!-- ================= PRELOADER ================= -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader-panel loader-panel--top"></div>
+    <div class="loader-panel loader-panel--bottom"></div>
+    <div class="loader-inner">
+      <div class="loader-head">
+        <span>TS—01</span><span>Toxin Solutions</span><span>Flight systems</span>
+      </div>
+      <div class="loader-count"><span id="loader-num">000</span><sup>%</sup></div>
+      <div class="loader-bar"><i id="loader-bar"></i></div>
+      <ul class="loader-log" id="loader-log">
+        <li>Compiling shaders <b>…</b></li>
+        <li>Allocating <span id="loader-pc">16,000</span> particles <b>…</b></li>
+        <li>Calibrating cursor field <b>…</b></li>
+        <li>Audio engine <b>standby</b></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ================= GLOBAL FX ================= -->
+  <div class="grain" aria-hidden="true"></div>
+  <div class="progress" aria-hidden="true"><i id="progress"></i></div>
+  <div class="cursor" aria-hidden="true"><div class="cursor-ring"><span class="cursor-label"></span></div><div class="cursor-dot"></div></div>
+  <canvas class="burst" id="burst" aria-hidden="true"></canvas>
+
+  <!-- ================= HEADER ================= -->
+  <header class="header" id="header">
+    <div class="header-bar">
+      <a class="brand" href="#top" data-cursor="Home" aria-label="Toxin Solutions — home">
+        <img src="assets/mark.webp" alt="" width="537" height="402">
+        <span><b>TOXIN</b>SOLUTIONS</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="#services" data-sound>Services</a>
+        <a href="#lab" data-sound>Lab</a>
+        <a href="#work" data-sound>Work</a>
+        <a href="#process" data-sound>Process</a>
+        <a href="#about" data-sound>About</a>
+      </nav>
+      <button class="sound" id="sound-toggle" type="button" aria-pressed="false" aria-label="Turn sound on">
+        <span class="sound-bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+        <span class="sound-text">Sound <b>off</b></span>
+      </button>
+      <a class="btn btn--red btn--sm header-cta" href="#contact" data-magnetic data-sound>Start a project</a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu">
+        <span class="sr-only">Menu</span><i></i><i></i>
+      </button>
+    </div>
+  </header>
+
+  <div class="menu" id="menu" hidden>
+    <nav aria-label="Mobile">
+      <a href="#services"><small>01</small>Services</a>
+      <a href="#lab"><small>02</small>Lab</a>
+      <a href="#work"><small>03</small>Work</a>
+      <a href="#process"><small>04</small>Process</a>
+      <a href="#about"><small>05</small>About</a>
+      <a href="#contact"><small>06</small>Contact</a>
+    </nav>
+    <p class="menu-foot">Next-gen tech. Human ambition.</p>
+  </div>
+
+  <main id="main">
+
+    <!-- ================= HERO (pinned) ================= -->
+    <section class="hero-wrap" id="top" aria-labelledby="hero-title">
+      <div class="hero">
+        <canvas class="hero-gl" id="hero-gl" aria-hidden="true"></canvas>
+        <img class="hero-fallback" src="assets/mark.webp" alt="" width="537" height="402" aria-hidden="true">
+
+        <div class="hud hud--tl"><span class="dot-live"></span> TS—01 / The next dimension</div>
+        <div class="hud hud--tr">IST <span data-clock>--:--:--</span></div>
+        <div class="hud hud--bl">X <span id="hud-x">0.000</span>&nbsp; Y <span id="hud-y">0.000</span></div>
+        <div class="hud hud--br"><span id="hud-fps">60</span> FPS · <span id="hud-pc">16,000</span> particles · WebGL</div>
+
+        <div class="hero-copy">
+          <p class="eyebrow" data-scramble>Next-gen tech. Human ambition.</p>
+          <p class="hero-sub" data-reveal>Distinctive websites. Immersive experiences. Built for people with a vision beyond ordinary.</p>
+          <div class="hero-cta" data-reveal>
+            <a class="btn btn--red" href="#contact" data-magnetic data-sound data-cursor="Let’s go">Build something bold <span aria-hidden="true">✳</span></a>
+            <a class="btn btn--ghost" href="#work" data-magnetic data-sound>Explore the work <span aria-hidden="true">↓</span></a>
+          </div>
+        </div>
+
+        <h1 class="hero-title" id="hero-title">
+          <span class="ht-line" data-split>Enter</span>
+          <span class="ht-line ht-line--2" data-split>What’s next<em>.</em></span>
+        </h1>
+
+        <div class="scroll-cue" aria-hidden="true"><span>Scroll</span><i></i></div>
+      </div>
+    </section>
+
+    <!-- ================= MARQUEE ================= -->
+    <section class="marquee" aria-label="Principles">
+      <div class="marquee-row" data-marquee="1">
+        <div class="marquee-track"><span>Design with intent</span><b>✳</b><span>Develop with precision</span><b>✳</b><span>Move with purpose</span><b>✳</b><span>Design with intent</span><b>✳</b><span>Develop with precision</span><b>✳</b><span>Move with purpose</span><b>✳</b></div>
+      </div>
+      <div class="marquee-row marquee-row--outline" data-marquee="-1">
+        <div class="marquee-track"><span>Web experiences</span><b>/</b><span>Creative development</span><b>/</b><span>Digital solutions</span><b>/</b><span>Web experiences</span><b>/</b><span>Creative development</span><b>/</b><span>Digital solutions</span><b>/</b></div>
+      </div>
+    </section>
+
+    <!-- ================= MANIFESTO (scroll-lit) ================= -->
+    <section class="manifesto" aria-label="Manifesto">
+      <div class="manifesto-pin">
+        <p class="label"><span>✳</span> Beyond the screen</p>
+        <p class="manifesto-text" data-lit>A website should do more than exist. It should <em>leave a mark.</em> Good design earns attention. Great experiences turn it into <em>connection.</em></p>
+      </div>
+    </section>
+
+    <!-- ================= SERVICES (horizontal pinned) ================= -->
+    <section class="hs" id="services" aria-labelledby="services-title">
+      <div class="hs-pin">
+        <div class="hs-track">
+          <article class="hs-panel hs-panel--intro">
+            <p class="label"><span>01</span> What I do</p>
+            <h2 id="services-title" class="h2" data-split>Big ideas. <em>Beautifully built.</em></h2>
+            <p class="lead">From the first sketch to the final interaction. One creative partner for your digital presence.</p>
+            <p class="hs-hint" aria-hidden="true">Keep scrolling <span>→</span></p>
+          </article>
+
+          <article class="hs-panel">
+            <div class="hs-num">01</div>
+            <div class="hs-visual hs-visual--web" aria-hidden="true">
+              <svg viewBox="0 0 400 280" fill="none">
+                <rect class="draw" x="10" y="10" width="380" height="260" rx="14"/>
+                <path class="draw" d="M10 48h380"/>
+                <circle cx="34" cy="29" r="5" class="fill-red"/><circle cx="52" cy="29" r="5" class="fill-dim"/><circle cx="70" cy="29" r="5" class="fill-dim"/>
+                <rect class="blk b1" x="34" y="72" width="210" height="26" rx="4"/>
+                <rect class="blk b2" x="34" y="108" width="150" height="12" rx="3"/>
+                <rect class="blk b3" x="34" y="128" width="170" height="12" rx="3"/>
+                <rect class="blk b4 red" x="34" y="160" width="96" height="30" rx="15"/>
+                <rect class="blk b5" x="264" y="72" width="102" height="170" rx="8"/>
+                <rect class="blk b6" x="34" y="212" width="66" height="30" rx="6"/>
+                <rect class="blk b7" x="110" y="212" width="66" height="30" rx="6"/>
+                <rect class="blk b8" x="186" y="212" width="66" height="30" rx="6"/>
+              </svg>
+            </div>
+            <h3>Web experiences</h3>
+            <p>Your brand, made impossible to scroll past.</p>
+            <ul class="chips"><li>Custom websites</li><li>Landing pages</li><li>Responsive design</li></ul>
+            <a class="link" href="#contact" data-service="Web experiences" data-sound>Enquire <span aria-hidden="true">→</span></a>
+          </article>
+
+          <article class="hs-panel">
+            <div class="hs-num">02</div>
+            <div class="hs-visual hs-visual--3d" aria-hidden="true">
+              <div class="cube-scene">
+                <div class="cube">
+                  <i class="f1"></i><i class="f2"></i><i class="f3"></i><i class="f4"></i><i class="f5"></i><i class="f6"></i>
+                </div>
+                <div class="cube cube--inner">
+                  <i class="f1"></i><i class="f2"></i><i class="f3"></i><i class="f4"></i><i class="f5"></i><i class="f6"></i>
+                </div>
+                <div class="orbit-ring"><b></b></div>
+              </div>
+            </div>
+            <h3>Creative development</h3>
+            <p>Thoughtful interactions. A little unexpected magic.</p>
+            <ul class="chips"><li>Motion &amp; interaction</li><li>3D experiences</li><li>Frontend development</li></ul>
+            <a class="link" href="#contact" data-service="Creative development" data-sound>Enquire <span aria-hidden="true">→</span></a>
+          </article>
+
+          <article class="hs-panel">
+            <div class="hs-num">03</div>
+            <div class="hs-visual hs-visual--flow" aria-hidden="true">
+              <svg viewBox="0 0 400 280" fill="none">
+                <path id="fp1" class="flow" d="M60 70 C 160 70, 160 140, 250 140"/>
+                <path id="fp2" class="flow" d="M60 210 C 160 210, 160 140, 250 140"/>
+                <path id="fp3" class="flow" d="M250 140 C 300 140, 300 80, 345 80"/>
+                <path id="fp4" class="flow" d="M250 140 C 300 140, 300 200, 345 200"/>
+                <circle r="4" class="packet"><animateMotion dur="2.4s" repeatCount="indefinite"><mpath href="#fp1"/></animateMotion></circle>
+                <circle r="4" class="packet"><animateMotion dur="2.4s" begin="1.2s" repeatCount="indefinite"><mpath href="#fp2"/></animateMotion></circle>
+                <circle r="4" class="packet"><animateMotion dur="1.8s" begin=".4s" repeatCount="indefinite"><mpath href="#fp3"/></animateMotion></circle>
+                <circle r="4" class="packet"><animateMotion dur="1.8s" begin="1.3s" repeatCount="indefinite"><mpath href="#fp4"/></animateMotion></circle>
+                <g class="node"><rect x="16" y="50" width="88" height="40" rx="10"/><text x="60" y="75">Form</text></g>
+                <g class="node"><rect x="16" y="190" width="88" height="40" rx="10"/><text x="60" y="215">API</text></g>
+                <g class="node node--core"><rect x="200" y="116" width="100" height="48" rx="24"/><text x="250" y="145">Automate</text></g>
+                <g class="node"><rect x="320" y="60" width="70" height="40" rx="10"/><text x="355" y="85">Sheet</text></g>
+                <g class="node"><rect x="320" y="180" width="70" height="40" rx="10"/><text x="355" y="205">Email</text></g>
+              </svg>
+            </div>
+            <h3>Digital solutions</h3>
+            <p>Less manual work. More room for your next idea.</p>
+            <ul class="chips"><li>Web applications</li><li>API integrations</li><li>Workflow automation</li></ul>
+            <a class="link" href="#contact" data-service="Digital solutions" data-sound>Enquire <span aria-hidden="true">→</span></a>
+          </article>
+
+          <article class="hs-panel hs-panel--end">
+            <p class="hs-end-text">Got something that doesn’t fit a box?</p>
+            <a class="btn btn--red btn--xl" href="#contact" data-magnetic data-sound data-cursor="Talk">Let’s talk <span aria-hidden="true">↗</span></a>
+          </article>
+        </div>
+        <div class="hs-progress" aria-hidden="true"><i></i></div>
+      </div>
+    </section>
+
+    <!-- ================= LAB (bento) ================= -->
+    <section class="section lab" id="lab" aria-labelledby="lab-title">
+      <div class="wrap">
+        <header class="sec-head">
+          <p class="label" data-reveal><span>02</span> Under the hood</p>
+          <h2 id="lab-title" class="h2" data-split>Capabilities, <em>live.</em></h2>
+          <p class="lead" data-reveal>A working look at the craft — real-time graphics, interfaces, automation and sound. Everything in this grid is running in your browser right now.</p>
+        </header>
+
+        <div class="bento">
+          <!-- Dashboard -->
+          <article class="card card--dash" data-tilt>
+            <div class="card-top"><span class="dots"><i></i><i></i><i></i></span><span class="mono">orbit.app / overview</span><span class="pill pill--live">Live preview · sample data</span></div>
+            <div class="kpis">
+              <div><span class="mono">Active projects</span><b data-count="12">0</b></div>
+              <div><span class="mono">Weekly progress</span><b><span data-count="84">0</span>%</b></div>
+              <div><span class="mono">Tasks shipped</span><b data-count="248">0</b></div>
+              <div><span class="mono">Avg. response</span><b><span data-count="3" >0</span>h</b></div>
+            </div>
+            <div class="chart-wrap"><canvas class="chart" id="chart"></canvas></div>
+            <div class="bars" id="bars" aria-hidden="true"></div>
+          </article>
+
+          <!-- Terminal -->
+          <article class="card card--term" data-tilt>
+            <div class="card-top"><span class="dots"><i></i><i></i><i></i></span><span class="mono">~/toxin — zsh</span></div>
+            <pre class="term" id="term" aria-label="Animated deploy log"></pre>
+          </article>
+
+          <!-- Type specimen -->
+          <article class="card card--type" data-tilt>
+            <div class="card-top"><span class="mono">Type system</span><span class="mono dim" id="wght-val">wght 400</span></div>
+            <div class="type-aa" id="type-aa">Aa</div>
+            <div class="type-meta mono"><span>Unbounded</span><span>200 — 900</span></div>
+          </article>
+
+          <!-- 3D dot sphere -->
+          <article class="card card--sphere" data-tilt>
+            <div class="card-top"><span class="mono">Real-time 3D</span><span class="mono dim">Drag your cursor</span></div>
+            <div class="sphere-stage"><div class="sphere" id="sphere"></div></div>
+          </article>
+
+          <!-- Audio -->
+          <article class="card card--audio" data-tilt>
+            <div class="card-top"><span class="mono">Sound engine</span><span class="mono dim" id="audio-state">Standby</span></div>
+            <canvas class="viz" id="viz"></canvas>
+            <button class="btn btn--ghost btn--sm" type="button" id="audio-btn" data-sound>Turn sound on</button>
+          </article>
+
+          <!-- Clock / availability -->
+          <article class="card card--clock" data-tilt>
+            <div class="card-top"><span class="mono">Studio time</span><span class="mono dim">IST · UTC+5:30</span></div>
+            <div class="clock-big" data-clock>--:--:--</div>
+            <p class="avail"><span class="dot-live"></span> Open for new projects</p>
+          </article>
+
+          <!-- Heatmap -->
+          <article class="card card--heat" data-tilt>
+            <div class="card-top"><span class="mono">Build activity</span><span class="mono dim">sample</span></div>
+            <div class="heat" id="heat" aria-hidden="true"></div>
+          </article>
+
+          <!-- Toolkit -->
+          <article class="card card--kit" data-tilt>
+            <div class="card-top"><span class="mono">Toolkit</span><span class="mono dim">what powers the work</span></div>
+            <div class="kit-rows" aria-label="Toolkit">
+              <div class="kit-row"><span>WebGL</span><span>GLSL shaders</span><span>JavaScript</span><span>Responsive UI</span><span>Motion design</span><span>WebGL</span><span>GLSL shaders</span><span>JavaScript</span><span>Responsive UI</span><span>Motion design</span></div>
+              <div class="kit-row kit-row--rev"><span>APIs</span><span>Automation</span><span>Google Apps Script</span><span>Web apps</span><span>3D</span><span>APIs</span><span>Automation</span><span>Google Apps Script</span><span>Web apps</span><span>3D</span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= REEL (raymarched 3D) ================= -->
+    <section class="reel-wrap" aria-label="Real-time 3D showcase">
+      <div class="reel">
+        <canvas class="reel-gl" id="reel-gl" aria-hidden="true"></canvas>
+        <div class="reel-hud">
+          <span class="mono">Fig. 02 — Obsidian, rendered live</span>
+          <span class="mono">Raymarched · 0 images · 0 videos</span>
+        </div>
+        <div class="reel-text">
+          <p class="reel-line reel-line--a">Immersive when</p>
+          <p class="reel-line reel-line--b">it matters<em>.</em></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= WORK (stacking cards) ================= -->
+    <section class="section work" id="work" aria-labelledby="work-title">
+      <div class="wrap">
+        <header class="sec-head">
+          <p class="label" data-reveal><span>03</span> Possibilities, explored</p>
+          <h2 id="work-title" class="h2" data-split>Different worlds. <em>Same detail.</em></h2>
+          <p class="lead" data-reveal>A few design directions to spark an idea. <span class="mono dim">Independent concepts · Not client projects</span></p>
+        </header>
+
+        <div class="stack">
+          <article class="stack-card" style="--i:0">
+            <div class="sc-inner sc--orbit">
+              <div class="sc-meta">
+                <span class="mono">01 / 03</span>
+                <h3>Orbit</h3>
+                <p>Product experience — a clearer kind of workspace.</p>
+                <a class="link" href="#contact" data-service="Web experiences" data-cursor="Explore" data-sound>Explore concept <span aria-hidden="true">→</span></a>
+              </div>
+              <div class="sc-visual" aria-hidden="true">
+                <div class="ov-app">
+                  <aside><b>o.</b><i class="on">Overview</i><i>Projects</i><i>Insights</i><i>Settings</i></aside>
+                  <div class="ov-main">
+                    <p class="ov-title">Your ideas. <span>In motion.</span></p>
+                    <div class="ov-grid">
+                      <div class="ov-k"><small>Active projects</small><b>12</b></div>
+                      <div class="ov-k"><small>Weekly progress</small><b>84%</b><i class="ov-meter"><i></i></i></div>
+                      <div class="ov-graph"><svg viewBox="0 0 300 90" preserveAspectRatio="none"><path class="ov-line" d="M0 70 C 30 60, 50 75, 80 55 S 130 30, 160 42 S 210 20, 240 26 S 280 8, 300 12"/><path class="ov-fill" d="M0 70 C 30 60, 50 75, 80 55 S 130 30, 160 42 S 210 20, 240 26 S 280 8, 300 12 V90 H0Z"/></svg></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="stack-card" style="--i:1">
+            <div class="sc-inner sc--forma">
+              <div class="sc-meta">
+                <span class="mono">02 / 03</span>
+                <h3>Forma</h3>
+                <p>Brand experience — spaces for living. Architecture &amp; interiors.</p>
+                <a class="link" href="#contact" data-service="Web experiences" data-cursor="Explore" data-sound>Explore concept <span aria-hidden="true">→</span></a>
+              </div>
+              <div class="sc-visual" aria-hidden="true">
+                <div class="fv">
+                  <span class="fv-brand">FORMA<sup>®</sup></span><span class="fv-idx">01 / 04</span>
+                  <div class="fv-arches"><i></i><i></i><i></i></div>
+                  <p class="fv-title">Room<br><em>to think.</em></p>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="stack-card" style="--i:2">
+            <div class="sc-inner sc--pulse">
+              <div class="sc-meta">
+                <span class="mono">03 / 03</span>
+                <h3>Pulse</h3>
+                <p>Commerce experience — sound without limits.</p>
+                <a class="link" href="#contact" data-service="Creative development" data-cursor="Explore" data-sound>Explore concept <span aria-hidden="true">→</span></a>
+              </div>
+              <div class="sc-visual" aria-hidden="true">
+                <div class="pv">
+                  <span class="pv-brand">PULSE<sup>®</sup></span>
+                  <div class="pv-speaker"><i></i><i></i><i></i><b></b></div>
+                  <p class="pv-title">Turn it<br>all the way.</p>
+                  <span class="pv-foot">Feel everything. <b>Launch concept →</b></span>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PROCESS (scroll-drawn) ================= -->
+    <section class="section process" id="process" aria-labelledby="process-title">
+      <div class="wrap">
+        <header class="sec-head">
+          <p class="label" data-reveal><span>04</span> From idea to impact</p>
+          <h2 id="process-title" class="h2" data-split>A clear path. <em>An exceptional result.</em></h2>
+        </header>
+        <div class="path">
+          <svg class="path-svg" viewBox="0 0 1200 120" preserveAspectRatio="none" aria-hidden="true">
+            <path class="path-base" d="M0 60 C 150 0, 250 120, 400 60 S 650 0, 800 60 S 1050 120, 1200 60"/>
+            <path class="path-draw" id="path-draw" d="M0 60 C 150 0, 250 120, 400 60 S 650 0, 800 60 S 1050 120, 1200 60"/>
+          </svg>
+          <ol class="steps">
+            <li class="step"><span class="step-node"></span><span class="mono">01</span><h3>Discover</h3><p>Your goals, your audience, your ambition. We start with the right questions.</p></li>
+            <li class="step"><span class="step-node"></span><span class="mono">02</span><h3>Design</h3><p>A visual direction with purpose. Layouts, prototypes and a feeling that fits your brand.</p></li>
+            <li class="step"><span class="step-node"></span><span class="mono">03</span><h3>Develop</h3><p>Responsive code, expressive motion and thoughtful details, built around your visitors.</p></li>
+            <li class="step"><span class="step-node"></span><span class="mono">04</span><h3>Launch</h3><p>Final checks, deployment and a clear handover. Your next chapter starts here.</p></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= ABOUT ================= -->
+    <section class="section about" id="about" aria-labelledby="about-title">
+      <div class="wrap about-grid">
+        <div class="about-art" aria-hidden="true">
+          <div class="halo"></div>
+          <img src="assets/mark.webp" alt="" width="537" height="402" loading="lazy">
+        </div>
+        <div class="about-copy">
+          <p class="label" data-reveal><span>05</span> The human behind the code</p>
+          <h2 id="about-title" class="h2" data-split>Small studio. <em>Expansive thinking.</em></h2>
+          <p class="lead" data-reveal>Toxin Solutions is my independent digital practice. I bring design and development together to help people turn ambitious ideas into websites that feel distinctly their own.</p>
+          <p data-reveal>You work directly with the person shaping your experience — from our first conversation to the details that make it feel right.</p>
+          <div class="facts" data-reveal>
+            <div><b data-count="1">0</b><span>Point of contact.<br>Always the maker.</span></div>
+            <div><b data-count="4">0</b><span>Clear steps,<br>idea to launch.</span></div>
+            <div><b><span data-count="100">0</span>%</b><span>Custom built.<br>No templates.</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CONTACT ================= -->
+    <section class="section contact" id="contact" aria-labelledby="contact-title">
+      <div class="wrap contact-grid">
+        <div class="contact-copy">
+          <p class="label" data-reveal><span>06</span> Your next chapter</p>
+          <h2 id="contact-title" class="h2 h2--xl" data-split>Have a bold idea? <em>Let’s build it.</em></h2>
+          <p class="lead" data-reveal>Tell me what you’re imagining. A new website, a fresh direction, or something that doesn’t quite fit in a box.</p>
+          <div class="sp" aria-live="polite" data-reveal>
+            <p class="mono red">A possible starting point</p>
+            <p class="sp-title" id="sp-title">A stronger first impression.</p>
+            <p class="sp-text" id="sp-text">A distinctive website built around your brand and what your visitors need to do.</p>
+            <ul class="sp-list" id="sp-list"><li>Visual direction</li><li>Responsive pages</li><li>Launch &amp; handover</li></ul>
+          </div>
+        </div>
+
+        <div class="form-card" data-reveal>
+          <form id="lead-form" novalidate>
+            <fieldset class="field">
+              <legend>What can I help you with?</legend>
+              <div class="choice">
+                <label><input type="radio" name="service" value="Web experiences" checked><span>Web experiences</span></label>
+                <label><input type="radio" name="service" value="Creative development"><span>Creative development</span></label>
+                <label><input type="radio" name="service" value="Digital solutions"><span>Digital solutions</span></label>
+                <label><input type="radio" name="service" value="Something else"><span>Something else</span></label>
+              </div>
+            </fieldset>
+
+            <div class="row">
+              <div class="field"><label for="f-name">Your name *</label><input id="f-name" name="name" type="text" autocomplete="name" required maxlength="120"><p class="err" id="e-name"></p></div>
+              <div class="field"><label for="f-email">Email address *</label><input id="f-email" name="email" type="email" autocomplete="email" required maxlength="160"><p class="err" id="e-email"></p></div>
+            </div>
+            <div class="row">
+              <div class="field"><label for="f-phone">Phone / WhatsApp <small>optional</small></label><input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="30"><p class="err" id="e-phone"></p></div>
+              <div class="field"><label for="f-budget">Budget <small>optional</small></label>
+                <select id="f-budget" name="budget"><option value="">Not sure yet</option><option>Under ₹50,000</option><option>₹50,000 – ₹1,50,000</option><option>₹1,50,000 – ₹3,00,000</option><option>₹3,00,000+</option></select></div>
+            </div>
+            <div class="row">
+              <div class="field"><label for="f-goal">Your main goal <small>optional</small></label>
+                <select id="f-goal" name="goal"><option value="">Let’s figure it out</option><option>Launch something new</option><option>Refresh an existing website</option><option>Bring in more enquiries</option><option>Simplify a workflow</option></select></div>
+              <div class="field"><label for="f-timeline">Your timeline <small>optional</small></label>
+                <select id="f-timeline" name="timeline"><option value="">I’m exploring</option><option>As soon as practical</option><option>Within 1–2 months</option><option>Within 3–6 months</option><option>Flexible</option></select></div>
+            </div>
+            <div class="field"><label for="f-message">A little about your idea *</label><textarea id="f-message" name="message" rows="4" required maxlength="4000"></textarea><p class="err" id="e-message"></p></div>
+
+            <div class="hp" aria-hidden="true"><label for="f-website">Leave this empty</label><input id="f-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+
+            <div class="field"><label class="check"><input id="f-consent" name="consent" type="checkbox" value="Yes" required><span>I agree to my details being used to respond to this message. <a href="privacy.html">Privacy details</a></span></label><p class="err" id="e-consent"></p></div>
+
+            <button class="btn btn--red btn--block" type="submit" id="submit-btn" data-magnetic data-cursor="Send"><span class="btn-text">Send your message</span> <span aria-hidden="true">✳</span></button>
+            <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+          </form>
+
+          <div class="form-success" id="form-success" hidden tabindex="-1">
+            <p class="mono red">Message received</p>
+            <p class="success-title">Thank you. <em>Your next chapter has started.</em></p>
+            <p>I read every message personally and will reply to you by email soon.</p>
+            <button type="button" class="link" id="send-another">Send another message <span aria-hidden="true">→</span></button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-top">
+        <p class="footer-line" data-split>Next-gen tech. <em>Your next big thing.</em></p>
+        <a class="btn btn--light" href="#contact" data-magnetic data-sound>Start a project <span aria-hidden="true">↗</span></a>
+      </div>
+      <p class="footer-word" id="footer-word" aria-label="Toxin Solutions">TOXINSOLUTIONS</p>
+      <div class="footer-bottom">
+        <span>© <span id="year">2026</span> Toxin Solutions</span>
+        <span class="mono">IST <span data-clock>--:--:--</span></span>
+        <nav aria-label="Footer"><a href="#services">Services</a><a href="#work">Work</a><a href="privacy.html">Privacy</a><a href="#top">Back to top ↑</a></nav>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/config.js" defer></script>
+  <script src="js/bird-points.js" defer></script>
+  <script src="js/core.js" defer></script>
+  <script src="js/gl-hero.js" defer></script>
+  <script src="js/gl-reel.js" defer></script>
+  <script src="js/fx.js" defer></script>
+  <script src="js/lab.js" defer></script>
+  <script src="js/audio.js" defer></script>
+  <script src="js/form.js" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>
